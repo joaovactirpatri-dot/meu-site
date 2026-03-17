@@ -1,14 +1,18 @@
-/* Improved estilos.css: More attractive Corinthians-themed design with bold headings, gradients, shadows, hovers. No HTML changes needed. */
+/* v2 Final: Yellow (#FFD700)/Red (#CC0000) mixed, beautiful theme. Font-weights adapted (400 body/p, 700 headings/links - not ultra-bold), high readability (light on dark, high contrast). News improved: striped gradient li, dynamic link colors/hovers/glows/transitions. Bold headings kept per original request but toned down. */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 html {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #1a0000 0%, #330000 30%, #000000 70%, #1a0000 100%);
+  color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
   min-height: 100vh;
   margin: 0;
   padding: 20px;
@@ -17,106 +21,144 @@ html {
 body {
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
-  border-radius: 20px;
+  background: rgba(10, 0, 0, 0.9);
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.25), 0 0 40px rgba(204, 0, 0, 0.35);
+  border-radius: 25px;
   padding: 40px;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+  animation: glow 10s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes glow {
+  0% { opacity: 0.5; transform: rotate(0deg); }
+  100% { opacity: 1; transform: rotate(180deg); }
 }
 
 h1, h2, h3, h4 {
-  color: #FFFFFF;
-  font-weight: 900 !important;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  letter-spacing: 1px;
-  position: relative;
+  color: #FFF;
+  font-weight: 700;
+  margin-top: 45px;
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+  letter-spacing: 0.5px;
 }
 
 h1 {
-  font-size: 2.5em;
-  background: linear-gradient(45deg, #FFFFFF, #FFD700);
+  font-size: 2.8em;
+  background: linear-gradient(45deg, #FFF 0%, #FFD700 50%, #CC0000 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  font-size: 2em;
-  color: #FFD700;
+  font-size: 2.2em;
+  color: #CC0000;
 }
 
 h3 {
-  font-size: 1.7em;
-  color: #FFFFFF;
-}
-
-h4 {
-  font-size: 1.4em;
+  font-size: 1.8em;
   color: #FFD700;
 }
 
+h4 {
+  font-size: 1.5em;
+  color: #FFF;
+}
+
 p {
-  line-height: 1.8;
-  margin-bottom: 25px;
+  font-weight: 400;
+  line-height: 1.85;
+  margin-bottom: 28px;
   font-size: 1.1em;
 }
 
 blockquote {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.5));
-  border-left: 5px solid #FFD700;
-  padding: 20px;
-  margin: 30px 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(204,0,0,0.15), rgba(0,0,0,0.7));
+  border-left: 6px solid #CC0000;
+  padding: 25px;
+  margin: 35px 0;
   font-style: italic;
-  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
-  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: inset 0 0 25px rgba(255,215,0,0.25), 0 4px 15px rgba(204,0,0,0.2);
+  border-radius: 12px;
 }
 
 ul {
-  background: linear-gradient(135deg, #111111, #000000);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #2a0000, #110000, #000);
+  color: #F5F5F5;
   padding: 0;
-  border: 3px solid #FFD700;
-  border-radius: 15px;
+  border: 4px solid #FFD700;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
   list-style: none;
-  margin: 30px 0;
+  margin: 35px 0;
+  position: relative;
+}
+
+ul::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #CC0000, #FFD700);
+  animation: stripe 3s linear infinite;
+}
+
+@keyframes stripe {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 li {
-  background-color: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(0,0,0,0.3));
   margin: 0;
-  padding: 25px;
+  padding: 28px;
   position: relative;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-  overflow: visible;
+  transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  border-bottom: 1px solid rgba(255,215,0,0.3);
+}
+
+li:last-child {
+  border-bottom: none;
 }
 
 li:hover {
-  background-color: rgba(255, 215, 0, 0.1);
-  transform: translateX(10px);
-  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+  background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(204,0,0,0.25));
+  transform: translateX(15px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(204,0,0,0.5), 0 0 25px rgba(255,215,0,0.4);
+  z-index: 1;
 }
 
 .noticias {
-  background: #000000 !important;
+  background: transparent !important;
   padding: 0;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
 .noticias a, .noticias a:link, .noticias a:visited, .noticias a:active {
-  background-color: transparent;
+  font-weight: 500;
+  color: #F8F8F8;
   text-decoration: none !important;
-  font-weight: 700;
-  color: #FFFFFF;
   display: block;
-  padding: 20px 25px;
-  transition: all 0.3s ease;
+  padding: 25px 30px;
+  transition: all 0.4s ease;
   position: relative;
 }
 
@@ -126,85 +168,92 @@ li:hover {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 5px;
-  background: #FFD700;
-  transition: width 0.3s ease;
+  width: 6px;
+  background: linear-gradient(to bottom, #FFD700, #CC0000);
+  transition: all 0.4s ease;
 }
 
 .noticias a:hover {
-  color: #FFD700 !important;
-  background: rgba(255, 215, 0, 0.1);
-  transform: scale(1.02);
-  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+  color: #FFF !important;
+  background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(204,0,0,0.3));
+  transform: scale(1.03);
+  box-shadow: inset 0 0 30px rgba(255,215,0,0.3);
 }
 
 .noticias a:hover::before {
   width: 100%;
-  background: linear-gradient(to right, #FFD700, #FFFFFF);
+  background: linear-gradient(45deg, #FFD700, #CC0000, #FFF);
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
 }
 
 img {
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  transition: all 0.4s ease;
+  max-width: 100%;
+  height: auto;
 }
 
 img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 15px 40px rgba(204,0,0,0.4);
 }
 
 header {
   text-align: center;
-  margin-bottom: 50px;
-  padding-bottom: 30px;
-  border-bottom: 3px solid #FFD700;
+  margin-bottom: 60px;
+  padding-bottom: 35px;
+  border-bottom: 5px solid #CC0000;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 2px;
 }
 
 header img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
+  max-width: 320px;
+  filter: drop-shadow(0 10px 30px rgba(204,0,0,0.5));
 }
 
 footer {
   text-align: center;
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 2px solid rgba(255, 215, 0, 0.5);
-  color: #ccc;
+  margin-top: 70px;
+  padding-top: 35px;
+  border-top: 4px solid rgba(204,0,0,0.8);
+  color: #E0E0E0;
+  font-weight: 500;
 }
 
 footer a {
   color: #FFD700;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 footer a:hover {
-  color: #FFFFFF;
-  text-shadow: 0 0 10px #FFD700;
+  color: #FFF;
+  text-shadow: 0 0 15px #FFD700;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  body {
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-  }
-  
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.6em; }
-  
-  li img {
-    float: none !important;
-    display: block;
-    margin-bottom: 10px;
-    max-width: 100%;
-  }
+  html { font-size: 16px; padding: 10px; }
+  body { padding: 25px 20px; margin: 10px; border-radius: 15px; }
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  li img { float: none !important; display: block; margin: 0 auto 15px; }
+  .noticias a { padding: 20px 20px; }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 16px; padding: 10px; }
+  html { font-size: 15px; }
+  body { padding: 20px 15px; }
 }
