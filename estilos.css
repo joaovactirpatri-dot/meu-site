@@ -179,8 +179,8 @@ footer a:hover {
 @media (max-width: 768px) {
   body { padding: 20px 12px; border-radius: 12px; }
   h1 { font-size: 1.9em; }
-  li img { max-width: 70px; }
-  .noticias a { padding: 18px 15px; }
+  li img { max-width: 100px !important; height: 70px; margin-right: 12px; }
+  .noticias a { padding: 20px 18px; }
 }
 
 @media (max-width: 480px) {
