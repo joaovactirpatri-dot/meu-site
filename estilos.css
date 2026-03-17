@@ -1,51 +1,210 @@
+/* Improved estilos.css: More attractive Corinthians-themed design with bold headings, gradients, shadows, hovers. No HTML changes needed. */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
 html {
-  background-color: #FFFFFF;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   color: #FFFFFF;
-  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
-  color: #000000;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  color: #FFFFFF;
+  font-weight: 900 !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  background: linear-gradient(45deg, #FFFFFF, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2em;
+  color: #FFD700;
+}
+
+h3 {
+  font-size: 1.7em;
+  color: #FFFFFF;
+}
+
+h4 {
+  font-size: 1.4em;
+  color: #FFD700;
 }
 
 p {
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+blockquote {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.5));
+  border-left: 5px solid #FFD700;
+  padding: 20px;
+  margin: 30px 0;
+  font-style: italic;
+  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+  border-radius: 10px;
 }
 
 ul {
-  background: #000000;
+  background: linear-gradient(135deg, #111111, #000000);
   color: #FFFFFF;
-  padding: 10px;
-  border: 2px solid #FFFFFF;
+  padding: 0;
+  border: 3px solid #FFD700;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  list-style: none;
+  margin: 30px 0;
 }
 
 li {
-  background-color: #000000;
-  margin: 15px 0;
-  padding: 10px;
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 0;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  overflow: visible;
+}
+
+li:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
 }
 
 .noticias {
   background: #000000 !important;
-  background-color: #000000;
-  padding: 20px;
-  border: 2px solid #FFFFFF;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .noticias a, .noticias a:link, .noticias a:visited, .noticias a:active {
-  background-color: #000000;
+  background-color: transparent;
   text-decoration: none !important;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+  padding: 20px 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.noticias a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.noticias a:hover {
+  color: #FFD700 !important;
+  background: rgba(255, 215, 0, 0.1);
+  transform: scale(1.02);
+  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.noticias a:hover::before {
+  width: 100%;
+  background: linear-gradient(to right, #FFD700, #FFFFFF);
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #FFD700;
+}
+
+header img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(255, 215, 0, 0.5);
+  color: #ccc;
+}
+
+footer a {
+  color: #FFD700;
+  text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.noticias a:hover {
-  color: #222222 !important;
+footer a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #FFD700;
 }
 
-.noticias a:hover {
-  color: #222222 !important;
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.6em; }
+  
+  li img {
+    float: none !important;
+    display: block;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 16px; padding: 10px; }
 }
