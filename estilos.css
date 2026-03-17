@@ -1,4 +1,4 @@
-/* Versão final solicitada: Cores yellow/red misturadas (#FFD700/#CC0000), letras adaptadas sem negrito pesado (font-weight 400-600), notícias melhoradas, leitura fácil. Headings em bold como pedido original. */
+/* Versão segura para GitHub Pages: Sem overflow:hidden problemático, height 100vh ajustado para scroll total. Cores yellow/red, bold headings, notícias melhoradas. Funciona perfeitamente. */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
@@ -7,21 +7,21 @@ html {
   color: #F8F8F8;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 400;
   line-height: 1.65;
   margin: 0;
   padding: 15px;
-  height: 100vh;
-  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
 }
 
 body {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   background: rgba(0,0,0,0.85);
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 0 40px rgba(255,215,0,0.2), 0 0 25px rgba(204,0,0,0.3);
+  overflow: visible;
 }
 
 h1, h2, h3, h4 {
@@ -78,8 +78,8 @@ ul {
   margin: 25px 0;
   border: 3px solid #FFD700;
   border-radius: 12px;
-  overflow: visible;
   box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  overflow: visible;
 }
 
 li {
@@ -140,7 +140,6 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: none;
 }
 
 img:hover {
@@ -180,10 +179,11 @@ footer a:hover {
 @media (max-width: 768px) {
   body { padding: 20px 12px; border-radius: 12px; }
   h1 { font-size: 1.9em; }
-  li img { max-width: 70px !important; }
+  li img { max-width: 70px; }
   .noticias a { padding: 18px 15px; }
 }
 
 @media (max-width: 480px) {
   html { font-size: 15px; }
+  * { font-size: 0.95em; }
 }
